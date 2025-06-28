@@ -225,7 +225,6 @@ export default function Profile() {
               <ProfileHeader />
               <EditProfile />
             </View>
-            ;
           </>
         }
       />

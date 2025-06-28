@@ -25,53 +25,61 @@ export default function More() {
             style={{ position: "absolute", top: 40, left: 20 }}
           />
         </View>
-        <Image
-          source={{ uri: bookData.cover }}
-          style={{ width: "100%", height: 380 }}
-        />
+        {bookData && (
+          <Image
+            source={{ uri: bookData.cover }}
+            style={{ width: "100%", height: 380 }}
+          />
+        )}
       </SafeAreaView>
 
       <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
         <ScrollView style={{ flex: 1, backgroundColor: "#fff" }}>
-          <Text style={{ fontSize: 20, fontWeight: "900" }}>
-            {bookData.title}
-          </Text>
-          <Text style={{ fontSize: 20, fontWeight: "700" }}>
-            BY:{bookData.author}
-          </Text>
+          {bookData && (
+            <>
+              <Text style={{ fontSize: 20, fontWeight: "900" }}>
+                {bookData.title}
+              </Text>
+              <Text style={{ fontSize: 20, fontWeight: "700" }}>
+                BY: {bookData.author}
+              </Text>
 
-          <Text style={{ fontSize: 18, fontWeight: "500", marginTop: 10 }}>
-            {bookData.desc}
-          </Text>
+              <Text style={{ fontSize: 18, fontWeight: "500", marginTop: 10 }}>
+                {bookData.desc}
+              </Text>
+            </>
+          )}
         </ScrollView>
       </SafeAreaView>
-      <View
-        style={{
-          height: 70,
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          width: "100%",
-          backgroundColor: "gray",
-          alignItems: "center",
-          borderTopLeftRadius: 12,
-          borderTopRightRadius: 12,
-        }}
-      >
-        <Text> Buy {bookData.title}</Text>
+      {bookData && (
         <View
           style={{
-            height: 35,
-            backgroundColor: "blue",
-            borderRadius: 8,
-            width: "30%",
+            height: 70,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            width: "100%",
+            backgroundColor: "gray",
             alignItems: "center",
-            alignSelf: "center",
+            borderTopLeftRadius: 12,
+            borderTopRightRadius: 12,
           }}
         >
-          <Text style={{ fontSize: 18, fontWeight: "500" }}>Purchase</Text>
+          <Text> Buy {bookData.title}</Text>
+          <View
+            style={{
+              height: 35,
+              backgroundColor: "blue",
+              borderRadius: 8,
+              width: "30%",
+              alignItems: "center",
+              alignSelf: "center",
+            }}
+          >
+            <Text style={{ fontSize: 18, fontWeight: "500" }}>Purchase</Text>
+          </View>
         </View>
-      </View>
+      )}
     </>
   );
 }

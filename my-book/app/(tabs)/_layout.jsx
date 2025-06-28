@@ -11,7 +11,7 @@ export default function _layout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" size={size} color={color} />
+            <Ionicons name="home" size={size} color={color} />
           ),
         }}
       />
@@ -19,9 +19,9 @@ export default function _layout() {
       <Tabs.Screen
         name="mypage"
         options={{
-          title: "Page",
+          title: "Favorites",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="book-outline" size={size} color={color} />
+            <Ionicons name="star" size={size} color={color} />
           ),
         }}
       />
@@ -30,7 +30,7 @@ export default function _layout() {
         options={{
           title: "Profile",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person-outline" size={size} color={color} />
+            <Ionicons name="person" size={size} color={color} />
           ),
         }}
       />
